@@ -3,18 +3,18 @@ require_relative 'lib/harvard/patterns/gem/version'
 Gem::Specification.new do |spec|
   spec.name          = "harvard-patterns-gem"
   spec.version       = Harvard::Patterns::Gem::VERSION
-  spec.authors       = ["Mr Phil Plencner"]
-  spec.email         = ["philip_plencner@harvard.edu"]
+  spec.authors       = ["Maura Meagher"]
+  spec.email         = ["maura_ferrarini@harvard.edu"]
 
   spec.summary       = %q{Ruby Gem with built assets from Harvard Patterns.}
-  spec.homepage      = "https://gitlab.com/harvard-library-web-team/harvard-patterns-gem"
+  spec.homepage      = "https://github.com/harvard-lts/harvard-patterns-gem"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
 
   spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://gitlab.com/harvard-library-web-team/harvard-patterns-gem"
-  spec.metadata["changelog_uri"] = "https://gitlab.com/harvard-library-web-team/harvard-patterns-gem/CHANGELOG.md"
+  spec.metadata["source_code_uri"] = "https://github.com/harvard-lts/harvard-patterns-gem"
+  spec.metadata["changelog_uri"] = "https://github.com/harvard-lts/harvard-patterns-gem/CHANGELOG.md"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
