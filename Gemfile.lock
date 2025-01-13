@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     harvard-patterns-gem (0.1)
-      rails (>= 6.0)
+      rails
       sassc-rails
 
 GEM
