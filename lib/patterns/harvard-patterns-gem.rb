@@ -7,13 +7,12 @@ require "patterns/gem/engine"
 #       module Rails
 #         class Engine < ::Rails::Engine
         #   initializer "patterns.gem.assets.precompile" do |app|
-        #     app.config.assets.precompile += %w[harvard-patterns.css]
+        #     app.config.assets.precompile += %w[harvard-patterns.scss]
         #   end
         # end
 #       end
 #   end
 # end
-
 
 module Patterns
   module Gem
