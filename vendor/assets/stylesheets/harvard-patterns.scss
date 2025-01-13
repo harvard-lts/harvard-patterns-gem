@@ -1,5 +1,8 @@
 // This is the main scss file for Harvard Patterns
 
+// CUSTOM BOOTSTRAP VARIABLES (must be imported before bootstrap)
+@import 'harvard-bootstrap-variables';
+
 // GLOBAL STYLES & MIXINS
 @import 'variables';
 @import 'breakpoints';
@@ -10,7 +13,6 @@
 @import 'global';
 @import 'links-and-buttons';
 @import 'visually-hidden';
-
 
 // PATTERNS
 @import 'facets';
@@ -25,3 +27,6 @@
 @import 'other-screens';
 @import 'search-results';
 @import 'searchbar';
+
+// BOOTSTRAP
+@import 'bootstrap';
