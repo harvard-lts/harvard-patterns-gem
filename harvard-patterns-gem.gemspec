@@ -27,7 +27,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   # Runtime dependencies
-  spec.add_runtime_dependency 'rails', '~> 6.0'
+  spec.add_runtime_dependency 'rails'
   spec.add_runtime_dependency 'sassc-rails'
 
   # Development dependencies
