@@ -1,7 +1,8 @@
 module Harvard
   module Patterns
     module Gem
-      VERSION = "0.12"
+      class Engine < ::Rails::Engine
+      end
     end
   end
 end
