@@ -2,7 +2,7 @@ require_relative 'lib/patterns/gem/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "harvard-patterns-gem"
-  spec.version       = Harvard::Patterns::Gem::VERSION
+  spec.version       = Patterns::Gem::VERSION
   spec.authors       = ["Maura Meagher"]
   spec.email         = ["maura_ferrarini@harvard.edu"]
 
