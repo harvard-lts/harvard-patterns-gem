@@ -29,7 +29,8 @@ Gem::Specification.new do |spec|
 
   # Runtime dependencies
   spec.add_runtime_dependency 'rails'
-  spec.add_runtime_dependency 'sassc-rails'
+  spec.add_runtime_dependency 'sass'
+  spec.add_runtime_dependency 'sass-rails'
 
   # Development dependencies
   spec.add_development_dependency 'rspec', '~> 3.0'
