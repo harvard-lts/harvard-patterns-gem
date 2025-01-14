@@ -1,5 +1,8 @@
 // This is the main scss file for Harvard Patterns
 
+// CUSTOM BOOTSTRAP 5 VARIABLE OVERRIDES
+@import 'harvard-bootstrap';
+
 // GLOBAL STYLES & MIXINS
 @import 'variables';
 @import 'breakpoints';
