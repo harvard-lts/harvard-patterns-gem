@@ -1,7 +1,7 @@
 module Harvard
   module Patterns
     module Gem
-      VERSION = "0.1"
+      VERSION = "0.10"
     end
   end
 end
