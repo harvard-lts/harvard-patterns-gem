@@ -102,7 +102,7 @@ Check your `Gemfile.lock` to confirm the change has been made. You should see a 
 Update the version in the gem's `version.rb` file. Best practice is to have this align with your Git tag.
 
 ```ruby
-# lib/harvard-patterns-gem/version.rb
+# lib/harvard/patterns/gem/version.rb
 module HarvardPatternsGem
   VERSION = '1.1.0' # Update to the new version
 end
