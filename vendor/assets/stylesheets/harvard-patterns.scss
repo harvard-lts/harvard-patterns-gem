@@ -1,5 +1,7 @@
 // This is the main scss file for Harvard Patterns
 
+@import 'fonts';
+
 // CUSTOM BOOTSTRAP 5 VARIABLE OVERRIDES
 @import 'harvard-bootstrap';
 
@@ -8,7 +10,6 @@
 @import 'breakpoints';
 @import 'colors';
 @import 'container';
-@import 'fonts';
 @import 'typography';
 @import 'global';
 @import 'links-and-buttons';
