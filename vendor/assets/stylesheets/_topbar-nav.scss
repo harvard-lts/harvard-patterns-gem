@@ -1,0 +1,47 @@
+// top navbar
+
+nav.navbar.topbar {
+  min-height: 60px;
+  
+  @include media-breakpoint-up(md) {
+    max-height: 60px;
+  }
+
+  // adjust padding to make full width
+  > .container {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  // remove linked logo on right side
+  // doing with css rather than modifying the .html.erb file
+  a.navbar-logo {
+    display: none;
+  }
+
+  // dropdown menu bar
+  a.nav-link {
+    padding: 0;
+    margin: 0.5rem;
+  }
+
+  .dropdown-menu[data-bs-popper] {
+    left: -73px;
+  }
+  
+  // dropdown menu bar for dark theme
+  &.navbar-dark {
+    a.nav-link {
+      &:hover, &:focus {
+        border-color: rgba($white, 0.3);
+      }
+    }
+  }
+
+  // hampburger menu
+  @include media-breakpoint-down(md) {
+    .dropdown-toggle.nav-link {
+      display: inline-block;
+    }
+  }
+}

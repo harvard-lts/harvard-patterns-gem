@@ -1,33 +1,37 @@
 // This is the main scss file for Harvard Patterns
 
+@import 'bootstrap/mixins';
+
 @import 'fonts';
 
 // CUSTOM BOOTSTRAP 5 VARIABLE OVERRIDES
 @import 'harvard-bootstrap';
 
 // GLOBAL STYLES & MIXINS
-@import 'variables';
-@import 'breakpoints';
+// @import 'variables';
+// @import 'breakpoints';
 @import 'colors';
-@import 'container';
-@import 'typography';
-@import 'global';
-@import 'links-and-buttons';
-@import 'visually-hidden';
+// @import 'container';
+// @import 'typography';
+// @import 'global';
+// @import 'links-and-buttons';
+// @import 'visually-hidden';
 
 // PATTERNS
-@import 'facets';
-@import 'footer';
+@import 'alert-banner';
+// @import 'facets';
+// @import 'footer';
 @import 'header-child';
-@import 'homepage';
-@import 'icon-list';
-@import 'index-map-explorer';
-@import 'item-detail';
-@import 'leaflet-hgl';
-@import 'modal-windows';
-@import 'other-screens';
-@import 'search-results';
-@import 'searchbar';
+// @import 'homepage';
+// @import 'icon-list';
+// @import 'index-map-explorer';
+// @import 'item-detail';
+// @import 'leaflet-hgl';
+// @import 'modal-windows';
+// @import 'other-screens';
+// @import 'search-results';
+// @import 'searchbar';
+@import 'topbar-nav';
 
 // BOOTSTRAP 5
 @import 'bootstrap';

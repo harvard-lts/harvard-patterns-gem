@@ -1,0 +1,36 @@
+// ALERT BANNER
+.hl__alert-banner {
+  background-color: $yellow;
+  color: $black;
+  font-family: $f-trueno;
+
+  @include media-breakpoint-down(sm) {
+    flex-wrap: wrap;
+  }
+
+  &__label {
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: $font-weight-bold;
+    letter-spacing: 2.14px;
+    line-height: 1.5em;
+    padding-top: 2px;
+  }
+
+  &__message {
+    font-size: 17px;
+    line-height: 1.5em;
+
+    @include media-breakpoint-down(sm) {
+      padding-top: 8px;
+    }
+
+    a {
+      color: $black;
+      text-decoration: underline;
+      &:hover, &:focus {
+        border-bottom-color: $black;
+      }
+    }
+  }
+}
