@@ -484,6 +484,7 @@ $link-fade:                               border 0.28s cubic-bezier(0.28,1.08,1,
 // custom link styles
 a:not(.btn), .btn-link {
   font-family: $f-trueno;
+  font-size: 1.06rem; // 17px
   font-weight: 600;
   border-bottom: 3px solid transparent;
   transition: $link-fade;
@@ -524,6 +525,13 @@ $grid-breakpoints: (
   xl: 1170px,
   xxl: 1400px // NEW - test if this is alright
 ) !default;
+
+/* Using with media queries
+min-width: @include media-breakpoint-up(sm) { }
+max-width: @include media-breakpoint-down(sm) { }
+single breakpoint: @include media-breakpoint-only(sm) { }
+between breakpoints: @include media-breakpoint-between(md, xl) { }
+*/
 // scss-docs-end grid-breakpoints
 
 
@@ -689,7 +697,7 @@ $headings-font-family:        $font-family-sans-serif !default;
 // $headings-font-style:         null !default;
 $headings-font-weight:        $font-weight-bold !default;
 // $headings-line-height:        1.2 !default;
-$headings-color:              #1e1e1e !default; // default is inherit (#414141)
+$headings-color:              $black !default; // default is inherit (#414141)
 // scss-docs-end headings-variables
 
 // When you need a heading to stand out, consider using a display heading—a larger, slightly more opinionated heading style.
@@ -885,8 +893,8 @@ $btn-link-disabled-color:     $gray-600 !default;
 // $btn-border-radius-sm:        var(--#{$prefix}border-radius-sm) !default;
 // $btn-border-radius-lg:        var(--#{$prefix}border-radius-lg) !default;
 
-// $button-fade:                 all 0.4s ease; // custom variable
-// $btn-transition:              color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
+$button-fade:                 all 0.4s ease; // custom variable
+$btn-transition:              $button-fade !default;
 
 // $btn-hover-bg-shade-amount:       15% !default;
 // $btn-hover-bg-tint-amount:        15% !default;
@@ -1225,7 +1233,7 @@ $nav-link-transition:               $link-fade !default;
 
 // scss-docs-start navbar-variables
 // $navbar-padding-y:                  $spacer * .5 !default;
-// $navbar-padding-x:                  null !default;
+$navbar-padding-x:                  1.0rem !default;
 
 // $navbar-nav-link-padding-x:         .5rem !default;
 
@@ -1236,12 +1244,16 @@ $nav-link-transition:               $link-fade !default;
 // $navbar-brand-padding-y:            ($nav-link-height - $navbar-brand-height) * .5 !default;
 // $navbar-brand-margin-end:           1rem !default;
 
-// $navbar-toggler-padding-y:          .25rem !default; // custom 0
-// $navbar-toggler-padding-x:          .75rem !default; // custom 0
+$navbar-toggler-padding-y:          .125rem !default;
+$navbar-toggler-padding-x:          .125rem !default;
 // $navbar-toggler-font-size:          $font-size-lg !default;
 // $navbar-toggler-border-radius:      $btn-border-radius !default;
 // $navbar-toggler-focus-width:        $btn-focus-width !default;
 // $navbar-toggler-transition:         box-shadow .15s ease-in-out !default;
+
+.navbar-toggler {
+  border-color: transparent !important;
+}
 
 // $navbar-light-color:                rgba(var(--#{$prefix}emphasis-color-rgb), .65) !default;
 // $navbar-light-hover-color:          rgba(var(--#{$prefix}emphasis-color-rgb), .8) !default;
@@ -1255,8 +1267,8 @@ $nav-link-transition:               $link-fade !default;
 // scss-docs-end navbar-variables
 
 // scss-docs-start navbar-dark-variables
-// $navbar-dark-color:                 rgba($white, .55) !default; // custom $white
-// $navbar-dark-hover-color:           rgba($white, .75) !default; // custom $white
+$navbar-dark-color:                 $white !default;
+$navbar-dark-hover-color:           $white !default;
 // $navbar-dark-active-color:          $white !default;
 // $navbar-dark-disabled-color:        rgba($white, .25) !default;
 // $navbar-dark-icon-color:            $navbar-dark-color !default;
@@ -1265,7 +1277,7 @@ $nav-link-transition:               $link-fade !default;
 // $navbar-dark-brand-color:           $navbar-dark-active-color !default;
 // $navbar-dark-brand-hover-color:     $navbar-dark-active-color !default;
 // scss-docs-end navbar-dark-variables
- 
+
  
 // Dropdowns
 //
@@ -1308,7 +1320,7 @@ $dropdown-link-hover-bg:            $background-gray !default;
 // scss-docs-end dropdown-variables
 
 // scss-docs-start dropdown-dark-variables
-// $dropdown-dark-color:               $gray-300 !default;
+$dropdown-dark-color:               $white !default;
 // $dropdown-dark-bg:                  $gray-800 !default;
 // $dropdown-dark-border-color:        $dropdown-border-color !default;
 // $dropdown-dark-divider-bg:          $dropdown-divider-bg !default;
@@ -1322,40 +1334,26 @@ $dropdown-link-hover-bg:            $background-gray !default;
 // $dropdown-dark-header-color:        $gray-500 !default;
 // scss-docs-end dropdown-dark-variables
 
-// custom dropdown styles - may or may not need this section
-// $dropdown-transition: transform 0.5s ease; // custom variable
+// custom nav and dropdown styles
+$dropdown-transition: transform 0.5s ease; // custom variable
 
-// .dropdown-toggle {
-//   &.btn-sm {
-//     & + .dropdown-menu {
-//       .dropdown-item {
-//         padding: 3px 0.47rem;
-//       }
-//     }
-//   }
+a.nav-link, 
+a.dropdown-item {
+  font-weight: normal;
+}
 
-//   &::after {
-//   	transition: $dropdown-transition;
-//     border-top: 0.5em solid currentColor !important;
-//     border-left: 0.425em solid transparent !important;
-//     border-right: 0.425em solid transparent !important;
-//     vertical-align: 1px !important;
-//   }
+.dropdown-toggle {
+  &::after {
+  	transition: $dropdown-transition;
+  }
 
-//   &[aria-expanded="true"]{
-//     border-radius: 4px 4px 0 0;
-
-//     &::after {
-//       transform: scaleY(-1);
-//     }
-//   }
-// }
-
-// .show.dropdown-menu {
-//   border-top: none;
-//   border-radius: 0 0 4px 4px;
-// }
-// end custom dropdown styles
+  &[aria-expanded="true"]{
+    &::after {
+      transform: scaleY(-1);
+    }
+  }
+}
+// end custom nav and dropdown styles
 
 
 // Pagination
