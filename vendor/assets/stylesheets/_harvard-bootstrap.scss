@@ -1339,7 +1339,7 @@ $dropdown-transition: transform 0.5s ease; // custom variable
 
 a.nav-link, 
 a.dropdown-item {
-  font-weight: normal;
+  font-weight: $font-weight-base;
 }
 
 .dropdown-toggle {
@@ -1415,7 +1415,7 @@ ul.pagination, ul.pagination a {
   border-bottom: none;
 }
 .pagination > .disabled > a {
-	font-weight: normal;
+	font-weight: $font-weight-base;
 }
 // end custom pagination styles
 
@@ -1726,7 +1726,7 @@ $card-border-color:                 $gray-400 !default;
 // Breadcrumbs
 
 // scss-docs-start breadcrumb-variables
-// $breadcrumb-font-size:              null !default;
+$breadcrumb-font-size:              1.06rem !default; // 17px
 // $breadcrumb-padding-y:              0 !default;
 // $breadcrumb-padding-x:              0 !default;
 // $breadcrumb-item-padding-x:         .5rem !default;
