@@ -484,7 +484,6 @@ $link-fade:                               border 0.28s cubic-bezier(0.28,1.08,1,
 // custom link styles
 a:not(.btn), .btn-link {
   font-family: $f-trueno;
-  font-size: 1.06rem; // 17px
   font-weight: 600;
   border-bottom: 3px solid transparent;
   transition: $link-fade;
@@ -1337,11 +1336,6 @@ $dropdown-dark-color:               $white !default;
 // custom nav and dropdown styles
 $dropdown-transition: transform 0.5s ease; // custom variable
 
-a.nav-link, 
-a.dropdown-item {
-  font-weight: $font-weight-base;
-}
-
 .dropdown-toggle {
   &::after {
   	transition: $dropdown-transition;
@@ -1726,7 +1720,7 @@ $card-border-color:                 $gray-400 !default;
 // Breadcrumbs
 
 // scss-docs-start breadcrumb-variables
-$breadcrumb-font-size:              1.06rem !default; // 17px
+// $breadcrumb-font-size:              null !default;
 // $breadcrumb-padding-y:              0 !default;
 // $breadcrumb-padding-x:              0 !default;
 // $breadcrumb-item-padding-x:         .5rem !default;
