@@ -19,39 +19,44 @@ html {
   }
 }
 
-body {
-  color: $c-font-base;
-  font-family: $f-lora;
-  font-size: 17px;
-  line-height: (29 / 17);  // line-height / font-size
-  position: relative;
+// body {
+//   color: $c-font-base;
+//   font-family: $f-lora;
+//   font-size: 17px;
+//   line-height: (29 / 17);  // line-height / font-size
+//   position: relative;
 
-  // ADD BACK IN WHEN MAKE DECISION ABOUT BREAKPOINTS
-  // @media ($bp-small-min) {
-  //   font-size: 19px;
-  //   line-height: (32 / 19); // line-height / font-size
-  // }
+//   // ADD BACK IN WHEN MAKE DECISION ABOUT BREAKPOINTS
+//   // @media ($bp-small-min) {
+//   //   font-size: 19px;
+//   //   line-height: (32 / 19); // line-height / font-size
+//   // }
 
-  & * {
-    margin-top: 0;
-  }
-}
+//   & * {
+//     margin-top: 0;
+//   }
+// }
 
-b,
-strong {
-  font-weight: 700;
-}
+// b,
+// strong {
+//   font-weight: 700;
+// }
 
-img {
-  height: auto;
-  max-width: 100%;
-}
+// img {
+//   height: auto;
+//   max-width: 100%;
+// }
 
 button {
   cursor: pointer;
 }
 
-input,
-textarea {
-  font-family: $f-lora;
+// input,
+// textarea {
+//   font-family: $f-lora;
+// }
+
+// add space to top of main container (arclight)
+#main-container {
+  padding-top: 2rem;
 }

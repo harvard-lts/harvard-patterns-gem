@@ -1,0 +1,74 @@
+// search area
+// TO DO: determine if these styles are universal to other *lites or should be specific to arclight by adding `.hl__arclight`
+.navbar.navbar-search {
+  border-top: 0;
+  border-bottom: 1px solid $border-gray;
+  padding-bottom: 2rem;
+
+  form.search-query-form {
+    flex-wrap: wrap;
+
+    @include media-breakpoint-up(lg) {
+      width: 100%;
+    }
+
+    // dropdown options
+    @include media-breakpoint-up(md) {
+      #within_collection {
+        width: 15rem;
+      }
+      
+      #search_field {
+        width: 10rem;
+      }
+    }
+
+    // make mobile responsive
+    @include media-breakpoint-down(sm) {
+      .within-collection-dropdown {
+        flex: auto;
+      }
+
+      #search_field {
+        width: 100%;
+        border-radius: $border-radius $border-radius 0 0;
+        border-bottom: none;
+      }
+
+      .search-autocomplete-wrapper,
+      #q {
+        border-bottom-left-radius: $border-radius !important;
+      }
+
+      #search {
+        border-radius: 0 0 $border-radius 0;
+      }
+    }
+
+    // placeholder text
+    #q::placeholder {
+      font-style: italic;
+    }
+
+    // search button
+    #search {
+      align-items: center;
+    }
+
+    // advanced search button
+    .btn.advanced_search {
+      align-content: center;
+    }
+  }
+}
+
+// advanced search form facets
+#advanced_search_facets {
+  .facet-content .card-body {
+    padding: 0.75rem 1.438rem;
+  }
+
+  .facet-limit {
+    margin-bottom: 1rem;
+  }
+}

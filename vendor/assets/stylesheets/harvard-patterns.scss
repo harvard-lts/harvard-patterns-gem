@@ -13,9 +13,9 @@
 @import 'colors';
 // @import 'container';
 // @import 'typography';
-// @import 'global';
+@import 'global';
 // @import 'links-and-buttons';
-// @import 'visually-hidden';
+@import 'visually-hidden';
 
 // PATTERNS
 @import 'alert-banner';
@@ -35,6 +35,7 @@
 
 // ARCLIGHT PATTERNS
 @import 'arclight/al-masthead';
+@import 'arclight/_al-searchbar';
 
 // BOOTSTRAP 5
 @import 'bootstrap';
