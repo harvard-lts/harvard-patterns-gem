@@ -1,0 +1,33 @@
+// ARCLIGHT
+// masthead navigation
+.al-masthead {
+  nav {
+    li.nav-item {
+      a {
+        padding: 0;
+      }
+    }
+  }
+
+  &.bg-light {
+    li.nav-item.active {
+      &.active a {
+        border-bottom-color: $gray-700 // var(--al-mastead-active-link-color);
+      }
+    }
+  }
+
+  &.bg-dark {
+    li.nav-item.active {
+      &.active a {
+        border-bottom-color: $white;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    .nav-links {
+      margin-bottom: 1.5rem;
+    }
+  }
+}
