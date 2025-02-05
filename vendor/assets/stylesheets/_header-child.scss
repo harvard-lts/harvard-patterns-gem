@@ -68,7 +68,6 @@
     a {
       padding: 10px 20px;
       margin: 4px;
-      border: none;
 
       @include media-breakpoint-down(md) {
         padding: 6px 10px;

@@ -20,7 +20,7 @@
 // PATTERNS
 @import 'alert-banner';
 // @import 'facets';
-// @import 'footer';
+@import 'footer';
 @import 'header-child';
 // @import 'homepage';
 // @import 'icon-list';
@@ -35,7 +35,7 @@
 
 // ARCLIGHT PATTERNS
 @import 'arclight/al-masthead';
-@import 'arclight/_al-searchbar';
+@import 'arclight/al-searchbar';
 
 // BOOTSTRAP 5
 @import 'bootstrap';

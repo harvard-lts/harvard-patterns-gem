@@ -72,3 +72,11 @@
     margin-bottom: 1rem;
   }
 }
+
+// search tips column
+.advanced-search-form {
+  @include media-breakpoint-down(md) {
+    .col-md-4 {
+      margin-top: 1.5rem;    }
+  }
+}
