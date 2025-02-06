@@ -38,20 +38,46 @@ Check your `Gemfile.lock` to confirm the gem has been added.
 
 ## Usage
 
-### 1. Add the Stylesheets and Fonts
-Include the gem's stylesheets in your project. In Rails, add the following line to your application stylesheet file (`app/assets/stylesheets/application.css` or similar):
+### 1. Adding Stylesheets and Fonts
+Include the gem's stylesheets in your project. In your Rails app, add the following line to your application stylesheet file (`app/assets/stylesheets/application.css` or similar):
 
 ```scss
 @import "harvard-patterns";
 ```
 
-This will include all the stylesheets from the Harvard Patterns Gem.
+This will include all the stylesheets from the Harvard Patterns Gem. If you only want a subset, you can also import them individually.
 
 Ensure the fonts provided by the gem are being served correctly. Rails will automatically include fonts placed in the asset pipeline.
 
-### 2. Verify Integration
-Run your application and check that the styles and fonts are correctly applied.
+### 2. Referencing Images
 
+Images should be referenced using standard Rails asset helpers:
+
+In ERB Views:
+
+```bash
+<%= image_tag "logo.png" %>
+```
+
+In SCSS/CSS:
+
+```scss
+.your-component {
+  background: image-url("logo.png");
+}
+```
+
+In JavaScript:
+
+```js
+const logoPath = asset_path("logo.png");
+```
+
+Note: Images may also need to be declared in your `manifest.js` file:
+```js
+//= link your-image-name.png
+//= link your-image-game.svg
+```
 
 ## Local Development
 If you want to modify the gem for local development and test it in another project, follow these steps:

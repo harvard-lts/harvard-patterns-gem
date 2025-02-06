@@ -488,13 +488,22 @@ a:not(.btn), .btn-link {
   border-bottom: 3px solid transparent;
   transition: $link-fade;
 
-  &:hover {
+  &:hover, &:focus {
     border-bottom-color: rgba($primary, 0.3);
   }
 }
 .nav-pills, .pagination, .dropdown-menu {
   a {
     border: none;
+  }
+}
+.bg-dark {
+  a:not(.btn), .btn-link {
+    color: $white;
+
+    &:hover, &:focus {
+      border-bottom-color: rgba($white, .3);
+    }
   }
 }
 // .list-group a, .list-group a:hover {
@@ -692,7 +701,7 @@ $h6-font-size:                1rem !default; // 15px or 16px?
 
 // custom font styles - mobile responsive sizes)
 @include media-breakpoint-down(sm) {
-  body, a:not(.btn) {
+  body, a:not(footer a):not(.btn) {
     font-size: 17px !important;
     line-height: (29 / 17) !important;  // line-height / font-size
   }
