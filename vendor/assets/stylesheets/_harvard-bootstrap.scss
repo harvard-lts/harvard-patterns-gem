@@ -3,6 +3,8 @@
 // Variables should follow the `$component-state-property-size` formula for
 // consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
 
+// https://github.com/twbs/bootstrap/blob/main/scss/_variables.scss
+
 $f-lora: Lora, Georgia, serif; // custom variable
 $f-trueno: "Trueno", sans-serif; // custom variable
 
@@ -662,7 +664,7 @@ $font-family-base:            $f-lora !default;
 // $font-size-root affects the value of `rem`, which is used for as well font sizes, paddings, and margins
 // $font-size-base affects the font size of the body text
 $font-size-root:              null !default; // NEW (browser default of 16px can be overridden by modifying the $font-size-root variable)
-$font-size-base:              1.188rem !default; // 19px // Assumes the browser default, typically `16px`
+$font-size-base:              1.06rem !default; // 17px // Assumes the browser default, typically `16px`
 $font-size-sm:                0.938rem !default; // 15px
 $font-size-lg:                1.563rem !default; // 25px
 
@@ -684,8 +686,8 @@ $h1-font-size:                3.75rem !default; // 60px
 $h2-font-size:                2rem !default; // 32px
 $h3-font-size:                1.25rem !default; // 20px
 $h4-font-size:                1.25rem !default; // 20px
-$h5-font-size:                $font-size-base !default; // 19px
-$h6-font-size:                1rem !default; // 15px or 16px?
+$h5-font-size:                1.19rem !default; // 19px
+$h6-font-size:                1rem !default; // 16px
 // scss-docs-end font-variables
 
 // scss-docs-start font-sizes
@@ -700,12 +702,12 @@ $h6-font-size:                1rem !default; // 15px or 16px?
 // scss-docs-end font-sizes
 
 // custom font styles - mobile responsive sizes)
-@include media-breakpoint-down(sm) {
-  body, a:not(footer a):not(.btn) {
-    font-size: 17px !important;
-    line-height: (29 / 17) !important;  // line-height / font-size
-  }
-}
+// @include media-breakpoint-down(sm) {
+//   body, a:not(footer a):not(.btn) {
+//     font-size: 17px !important;
+//     line-height: (29 / 17) !important;  // line-height / font-size
+//   }
+// }
 // end custom font styles
 
 // scss-docs-start headings-variables
@@ -795,7 +797,7 @@ $headings-color:              $black !default; // default is inherit (#414141)
 
 // $table-cell-vertical-align:   top !default;
 
-// $table-color:                 var(--#{$prefix}emphasis-color) !default;
+$table-color:                 $gray-700 !default;
 // $table-bg:                    var(--#{$prefix}body-bg) !default;
 // $table-accent-bg:             transparent !default;
 
@@ -839,6 +841,12 @@ $headings-color:              $black !default; // default is inherit (#414141)
 //   "dark":       $dark,
 // ) !default;
 // scss-docs-end table-loop
+
+// custom table styles
+table, .table {
+  font-family: $font-family-sans-serif;
+}
+// end custom table styles
 
 
 // Buttons + Forms
@@ -885,7 +893,10 @@ $btn-line-height:             1.188rem !default; // 19px
 
 // $btn-padding-y-sm:            $input-btn-padding-y-sm !default;
 // $btn-padding-x-sm:            $input-btn-padding-x-sm !default;
-// $btn-font-size-sm:            $input-btn-font-size-sm !default;
+$btn-font-size-sm:            .75rem !default; // 12px
+.btn.btn-sm {
+  line-height: 1rem; // 16px
+}
 
 // $btn-padding-y-lg:            $input-btn-padding-y-lg !default;
 // $btn-padding-x-lg:            $input-btn-padding-x-lg !default;
@@ -1484,6 +1495,12 @@ $card-border-color:                 $gray-400 !default;
 // $card-group-margin:                 $grid-gutter-width * .5 !default;
 // scss-docs-end card-variables
 
+// custom card styles
+.card-header {
+  font-family: $headings-font-family;
+}
+// end custom card styles
+
 
 // Accordion
 
@@ -1620,6 +1637,12 @@ $card-border-color:                 $gray-400 !default;
 // $badge-border-radius:               var(--#{$prefix}border-radius) !default;
 // scss-docs-end badge-variables
 
+// custom badge styles
+.badge {
+  font-family: $font-family-sans-serif;
+}
+// end custom badge styles
+
 
 // Modals
 
@@ -1665,6 +1688,13 @@ $card-border-color:                 $gray-400 !default;
 // $modal-transition:                  transform .3s ease-out !default;
 // $modal-scale-transform:             scale(1.02) !default;
 // scss-docs-end modal-variables
+
+// custom modal styles
+.modal-header,
+.modal-title {
+  font-family: $headings-font-family !important;
+}
+// end custom modal styles
 
 
 // Alerts
@@ -1758,7 +1788,7 @@ $card-border-color:                 $gray-400 !default;
 // Breadcrumbs
 
 // scss-docs-start breadcrumb-variables
-$breadcrumb-font-size:              1.06rem !default;
+// $breadcrumb-font-size:              null !default;
 // $breadcrumb-padding-y:              0 !default;
 // $breadcrumb-padding-x:              0 !default;
 // $breadcrumb-item-padding-x:         .5rem !default;

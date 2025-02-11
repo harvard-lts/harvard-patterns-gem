@@ -1,0 +1,225 @@
+// ITEM DETAIL PAGE
+.hl__arclight.blacklight-catalog-show {
+  .breadcrumb-home-link {
+    display: none;
+  }
+
+  // add collection-identifier to title grid area
+  .title-container {
+    margin-bottom: 1rem;
+
+    grid-template-areas:
+      "title bookmark-toggle"
+      "collection-identifier collection-identifier"
+      "request request"
+      "sidebar-toggle sidebar-toggle"
+      "online-contents online-contents";
+
+    @include media-breakpoint-up(lg) {
+      grid-template-areas:
+        "title request bookmark-toggle"
+        "collection-identifier collection-identifier"
+        "sidebar-toggle sidebar-toggle sidebar-toggle"
+        "online-contents online-contents online-contents";
+    }
+
+    h1 {
+      font-family: $font-family-base;
+    }
+
+    .hl__collection-identifier {
+      grid-area: collection-identifier;
+    }
+
+    .citation-button {
+      grid-area: bookmark-toggle;
+      margin: 0.5rem;
+      align-self: start;
+    }
+
+    .request-button {
+      grid-area: bookmark-toggle;
+      margin: 0.5rem;
+    }
+  }
+
+  .online-contents {
+    .al-online-content-icon {
+      .blacklight-icons svg {
+        height: 1.5rem;
+        width: 1.5rem;
+      }
+    }
+    h2 {
+      font-family: 14px;
+      letter-spacing: 1.17px;
+    }
+  }
+
+  .al-oembed-viewer {
+    margin-top: 1.5rem;
+
+    .al-digital-object {
+      margin-bottom: .5rem;
+      
+      a {
+        span {
+          display: inline;
+          position: relative;
+          top: 0.25rem;
+          margin-left: 0.125rem;
+        }
+      }
+    }
+
+    iframe {
+      padding-bottom: 1.25rem;
+    }
+  }
+
+  // embed thumbnails option
+  .show-document {
+    .thumbnail-card {
+      width: 12.5rem
+    }
+  }
+
+  // metadata
+  #metadata, #about-this-level {
+    padding-top: 1rem;
+  }
+
+  #contents {
+    border-top: 0;
+  }
+
+  .al-show-sub-heading {
+    font-size: 1.25rem;
+    letter-spacing: 1.5px;
+  }
+
+  dl {
+    &.dl-invert dt {
+      text-align: left;
+    }
+
+    dt {
+      // font-size: 14px;
+      // text-transform: uppercase;
+      font-family: $font-family-sans-serif;
+      font-weight: $font-weight-semibold;
+      // letter-spacing: 1.17px;
+      // padding-top: 4px;
+  
+      &::after {
+        height: 5px;
+        width: 3px;
+        background: white;
+        content: ".";
+        position: relative;
+        left: -8px;
+        color: white;
+      }
+    }
+
+    dd {
+      margin-bottom: 1.25rem;
+
+      p:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .chronlist-head,
+  .list-head,
+  .index-head,
+  .table-head {
+    font-family: $font-family-sans-serif;
+  }
+
+  // sidebar
+  .al-show-actions-box {
+    border-radius: $border-radius;
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+  }
+
+  // keep sidebar visible on the Catalog show page
+  .collection-sidebar {
+    @include media-breakpoint-up(lg) {
+      height: 100vh;
+      overflow-y: auto;
+      position: sticky;
+      top: 1rem;
+    }
+  }
+
+  // match height of other buttons
+  .al-show-actions-box-feedback {
+    button {
+      position: relative;
+      padding-left: 33px;
+
+      svg {
+        position: absolute;
+        left: 8px;
+        top: 4px;
+      }
+    }
+  }
+
+  nav.sidebar-section {
+    margin-top: 2rem;
+    border-bottom: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+
+    h2 {
+      margin-bottom: 0;
+    }
+  }
+
+  #collection-context {
+    &::before {
+      background-image: linear-gradient(90deg, #6c6c6c 40%, rgba(255,255,255,0) 20%),linear-gradient(90deg, #6c6c6c 40%, rgba(255,255,255,0) 20%);
+      background-position: top;
+      background-repeat: repeat-x;
+      background-size: 4px 1px;
+      border: none;
+      content: "";
+      display: block;
+      height: 1px;
+      margin-bottom: 2rem;
+      margin-top: 2rem;
+    }
+  }
+
+  .al-toggle-view-children {
+    &:hover, &:focus {
+      background-color: $black;
+    }
+  }
+}
+
+
+// styles that are more generic than just item-detail page
+.al-online-content-icon {
+  .blacklight-icons svg {
+    fill: var(--al-online-icon-color) !important;
+  }
+}
+
+.online-content-icon-document-container {
+  float: right;
+}
+
+
+// small buttons with span icons alignment (no svgs)
+// "request" and "add to my request list"
+// TODO: search .material-symbols-outlined for unintended effects
+button.btn-sm {
+  span.material-symbols-outlined {
+    font-size: 19px;
+  }
+}
