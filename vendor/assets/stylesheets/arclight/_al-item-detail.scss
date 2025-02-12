@@ -200,6 +200,16 @@
       background-color: $black;
     }
   }
+
+  #contents {
+    border-bottom: none;
+
+    table {
+      .al-online-content-icon {
+        margin-right: .5rem;
+      }
+    }
+  }
 }
 
 
@@ -213,7 +223,6 @@
 .online-content-icon-document-container {
   float: right;
 }
-
 
 // small buttons with span icons alignment (no svgs)
 // "request" and "add to my request list"
