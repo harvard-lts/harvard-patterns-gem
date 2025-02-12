@@ -22,7 +22,7 @@
     }
 
     // indent and make small gray links look clickable
-    .breadcrumb-links {
+    .breadcrumb-links:not(.al-grouped-repository) {
       margin-left: .5rem;
 
       span.ms-3 {
