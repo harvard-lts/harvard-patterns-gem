@@ -5,7 +5,7 @@
   }
 
   #documents {
-    // search result card
+    // search result card - list view
     .documents-list article.document,
     &.documents-list article.document {
       padding-top: 1.25rem;
@@ -16,6 +16,17 @@
       }
     }
 
+    // search result card - compact view
+    .documents-compact article.document,
+    &.documents-list article.document {
+      padding-top: 1rem;
+      padding-bottom: .5rem;
+
+      dl {
+        margin-bottom: 0;
+      }
+    }
+        
     .al-document-highlight {
       padding-left: 1.25rem;
       padding-right: 1.25rem;
