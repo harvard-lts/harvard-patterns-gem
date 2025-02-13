@@ -1,3 +1,169 @@
+// FILTER RAIL (SIDEBAR)
+#facets {
+  font-family: $font-family-sans-serif;
+
+  .facets-heading {
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+
+  #facet-panel-collapse {
+    background-color: $background-gray;
+    padding: 1rem;
+  }
+
+  .facet-limit {
+    border: 0;
+
+    &:not(:last-child)::after {
+      content: '';
+      border-bottom: 1px solid $border-color;
+      padding-bottom: 1rem;
+      background-color: $background-gray;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .facet-field-heading button {
+      letter-spacing: 2px;
+      border: 0;
+
+      // update arrow style
+      &::after {
+        --red-triangle-img: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='%23eb001b' stroke='%23eb001b' stroke-width='2' d='M2 6 L8 12 L14 6 Z'/%3e%3c/svg%3e");
+        content: "";
+        transform: none;
+        background-image: var(--red-triangle-img);
+        background-repeat: no-repeat;
+        background-position-y: center;
+        height: 16px;
+        width: 12px;
+        transition: transform 0.5s ease;
+
+        &[aria-expanded="true"] {
+          transform: scaleY(-1);
+        }
+      }
+    }
+
+    .card-body {
+      background-color: $background-gray;
+      padding: .5rem;
+
+      .facet-select {
+        color: $body-color;
+        font-weight: $font-weight-base;
+
+        &:hover, &:focus {
+          border-bottom-color: rgba($black, 0.3);
+        }
+      }
+
+      .more_facets {
+        text-align: right;
+        text-transform: uppercase;
+        margin-top: .5rem;
+        font-size: 14px;
+        letter-spacing: 2px;
+        font-weight: $font-weight-bold;
+      }
+    }
+
+    .range_limit {
+      // "apply" button
+      input.submit {
+        font-size: $btn-font-size-sm;
+        line-height: 1rem;
+        margin-top: .1px;
+        height: 34.5px;
+        width: 4.5rem; 
+      }
+    }
+
+    // active filters
+    &-active {
+      .card-header {
+        background-color: $background-gray;
+      }
+      .card-header button {
+        background-color: $background-gray;
+        color: $body-color;
+      }
+
+      .facet-values {
+        .facet-label {
+          display: flex;
+          gap: .5rem;
+
+          span.blacklight-icons-remove {
+            display: flex;
+          }
+
+          a.remove {
+            border: 0;
+            margin-left: .5rem;
+            padding-left: 0;
+            padding-top: 3px;
+          }
+        }
+
+        li .selected {
+          color: $body-color;
+          font-weight: $font-weight-bold;
+        }
+      }
+    }
+  }
+
+  // facet toggle
+  @include media-breakpoint-down(lg) {
+    background: $background-gray;
+
+    .facets-header {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
+    .facets-heading {
+      margin-bottom: 0;
+      align-self: center;
+    }
+  }
+}
+
+// applied filter parameters
+#appliedParams {
+  .applied-filter {
+    align-items: center;
+
+    .btn {
+      display: flex;
+      align-items: center;
+      height: 45px;
+      text-transform: none;
+      letter-spacing: normal;
+      font-weight: normal;
+      padding: .75rem;
+
+      // if want to turn into small buttons
+      // padding: 5px 9px;
+      // font-size: $btn-font-size-sm;
+      // line-height: 1rem;
+
+      &:not(.remove):hover {
+        color: $gray-600;
+        background-color: transparent;
+      }
+
+      .filter-name::after {
+        padding-right: 0.3em;
+      }
+    }
+  }
+}
+
 // .facets__rail {
 //   position: absolute;
 //   left: 0;

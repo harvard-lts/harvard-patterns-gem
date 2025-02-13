@@ -1,0 +1,57 @@
+// FILTER RAIL
+// OVERRIDE Blacklight Range Limit gem because it doesn't seem to work with Rails 7/Blacklight 8
+// @see https://github.com/projectblacklight/blacklight_range_limit/issues/236
+#facet-date_range {
+  // Hide some features that don't work or we don't want
+  .distribution, .more_facets, .facet-values.missing, .facet-count {
+    display: none;
+  }
+  p.range.subsection {
+    .facet-limit-active & {
+      // Don't show the complete date range if one is already applied
+      display: none;
+    }
+  }
+}
+
+// show exclude icon on link hover
+.facet-values {
+  li {
+    &:hover {
+      a.exclude-facet[rel="nofollow"] {
+        .material-symbols-outlined {
+          visibility: visible;
+        }
+      }
+    }
+  }
+}
+
+// exclude facet icon styles
+a.exclude-facet {
+  height: 1.25rem;
+  width: 1.25rem;
+  border: 0;
+
+  &[rel="nofollow"] {
+    .material-symbols-outlined {
+      visibility: hidden;
+
+      &:hover, &:focus {
+        visibility: visible;
+        color: $red;
+        border: 0;
+      }
+    }
+  }
+}
+
+// selected filters that appear at top
+.constraints-container {
+  .exclude-filter {
+    span {
+      text-decoration: line-through;
+      color: $red;
+    }
+  }
+}
