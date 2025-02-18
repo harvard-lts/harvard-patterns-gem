@@ -10,6 +10,7 @@
   #facet-panel-collapse {
     background-color: $background-gray;
     padding: 1rem;
+    border-radius: $border-radius;
   }
 
   .facet-limit {
@@ -130,6 +131,14 @@
       margin-bottom: 0;
       align-self: center;
     }
+
+    .facet-toggle-button {
+      background-color: $white;
+
+      &:hover, &:focus {
+        background-color: $secondary;
+      }
+    }
   }
 }
 
@@ -153,7 +162,7 @@
       // line-height: 1rem;
 
       &:not(.remove):hover {
-        color: $gray-600;
+        color: $secondary;
         background-color: transparent;
       }
 

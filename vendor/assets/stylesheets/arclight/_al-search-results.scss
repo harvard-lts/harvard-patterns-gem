@@ -4,65 +4,6 @@
     display: none;
   }
 
-  #documents {
-    // search result card - list view
-    .documents-list article.document,
-    &.documents-list article.document {
-      padding-top: 1.25rem;
-      padding-bottom: .5rem;
-
-      dl {
-        margin-bottom: 0;
-      }
-    }
-
-    // search result card - compact view
-    .documents-compact article.document,
-    &.documents-list article.document {
-      padding-top: 1rem;
-      padding-bottom: .5rem;
-
-      dl {
-        margin-bottom: 0;
-      }
-    }
-        
-    .al-document-highlight {
-      padding-left: 1.25rem;
-      padding-right: 1.25rem;
-    }
-
-    // indent and make small gray links look clickable
-    .breadcrumb-links:not(.al-grouped-repository) {
-      margin-left: .5rem;
-
-      span.ms-3 {
-        margin-left: 0 !important;
-      }
-
-      a {
-        text-decoration: dotted underline;
-        border-bottom: 0;
-
-        &:hover, &:focus {
-          text-decoration-style: solid;
-        }
-      }
-    }
-
-    // gray box title when "grouped by collection"
-    .al-grouped-title-bar {
-      h3, .h3 {
-        line-height: 1.5;
-      }
-    }
-
-    // extent badge
-    article.document .document-title-heading .al-document-extent {
-      background-color: $background-gray;
-    }
-  }
-
   // section header that says "Top # results"
   .al-grouped-results .al-grouped-more {
     font-family: $font-family-sans-serif;
@@ -79,9 +20,65 @@
       align-items: center;
     }
   }
+}
 
-  ul.pagination {
-    border-top: none;
-    padding-top: 0;
+
+// metadata card views (on search results and :my request list" pages)
+#documents {
+  // search result card - list view
+  .documents-list article.document,
+  &.documents-list article.document {
+    padding-top: 1.25rem;
+    padding-bottom: .5rem;
+
+    dl {
+      margin-bottom: 0;
+    }
+  }
+
+  // search result card - compact view
+  .documents-compact article.document,
+  &.documents-compact article.document {
+    padding-top: 1rem;
+    padding-bottom: .5rem;
+
+    dl {
+      margin-bottom: 0;
+    }
+  }
+      
+  .al-document-highlight {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  // indent and make small gray links look clickable
+  .breadcrumb-links:not(.al-grouped-repository) {
+    margin-left: .5rem;
+
+    span.ms-3 {
+      margin-left: 0 !important;
+    }
+
+    a {
+      text-decoration: dotted underline;
+      border-bottom: 0;
+
+      &:hover, &:focus {
+        text-decoration-style: solid;
+      }
+    }
+  }
+
+  // gray box title when "grouped by collection"
+  .al-grouped-title-bar {
+    h3, .h3 {
+      line-height: 1.5;
+    }
+  }
+
+  // extent badge
+  article.document .document-title-heading .al-document-extent {
+    background-color: $background-gray;
   }
 }

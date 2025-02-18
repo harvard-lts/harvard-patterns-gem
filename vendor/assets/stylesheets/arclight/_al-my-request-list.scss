@@ -1,9 +1,135 @@
-// MY REQUEST LIST (from Notch 8)
-.calendar-icon {
-  color: #555555;
+// MY REQUEST LIST
+.blacklight-bookmarks {
+  h2 {
+    padding-top: 1rem;
+  }
+
+  #sortAndPerPage {
+    padding-top: 1rem;
+  }
+
+  // metadata info
+  .document-metadata {
+    dt {
+      font-family: $font-family-sans-serif;
+      font-weight: $font-weight-semibold;
+    }
+
+    // view more/less button
+    .truncator.truncated {
+      .content {
+        transition: transform 0.5s ease;
+      }
+
+      button {
+        display: block;
+        padding-bottom: 0;
+        border: 0;
+        border-bottom: 3px solid transparent;
+        border-radius: 0;
+        transition: $link-fade;
+
+        &:hover, &:focus {
+          border-bottom-color: rgba($primary, 0.3);
+        }
+
+        .view-more, .view-less {
+          color: $link-color;
+          font-weight: $font-weight-semibold;
+        }
+
+        // update arrow style
+        .icon::before {
+          display: inline-block;
+          --red-triangle-img: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='%230579b8' stroke='%230579b8' stroke-width='2' d='M2 6 L8 12 L14 6 Z'/%3e%3c/svg%3e");
+          content: "";
+          transform: none;
+          background-image: var(--red-triangle-img);
+          background-repeat: no-repeat;
+          background-position-y: center;
+          height: 14px;
+          width: 10.5px;
+          transition: transform 0.5s ease;
+        }
+      }
+
+      &.expanded .icon::before {
+        transform: scaleY(-1);
+      }
+    }
+
+    // restrictions box styling
+    @include media-breakpoint-up(md) {
+      dt.col-md-3 {
+        max-width: 160px;
+        margin-left: 2rem;
+
+        &.blacklight-restrictions {
+          border: 1px solid $border-gray;
+          border-left: 6px solid $red;
+          border-right: 0;
+          border-radius: 4px 0 0 4px;
+          padding-top: .75rem;
+          margin-bottom: .5rem;
+        }
+      }
+      
+      dd.col-md-9 {
+        max-width: calc(75% - 2rem);
+
+        &.blacklight-restrictions {
+          border: 1px solid $border-gray;
+          border-left: 0;
+          border-radius: 0 4px 4px 0;
+          padding: .75rem 1.25rem;
+        }
+      }
+    }
+
+    @include media-breakpoint-down(md) {  
+      dt.blacklight-restrictions,
+      dd.blacklight-restrictions {
+        padding: .75rem 2.25rem .25rem 1.25rem;
+        border-left: 6px solid $red;
+        border-radius: 4px 4px 0 0;
+        margin: 0 1rem;
+      }
+
+      dt.blacklight-restrictions {
+        margin-top: .5rem;
+      }
+      
+      dd.blacklight-restrictions {
+        padding: 0 2.25rem .75rem 1.25rem;
+        border-radius: 0 0 4px 4px;
+        margin-bottom: .5rem;
+      }
+    }
+  }
 }
 
-// my request list
 .print-and-email-group {
-  @extend .result-type-group
+  @extend .result-type-group;
+
+  a {
+    height: 45px;
+  }
+}
+
+
+// "submit request" calendar icon
+.date-field {
+  .calendar-icon {
+    color: $body-color;
+  }
+
+  + span {
+    &:hover, &:focus {
+      background-color: $secondary;
+
+      .calendar-icon {
+        color: $white;
+      }
+    }
+  }
 }
