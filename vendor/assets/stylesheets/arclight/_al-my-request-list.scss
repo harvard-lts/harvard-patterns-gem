@@ -108,21 +108,28 @@
   }
 }
 
-
-// NOTCH 8 EDITS
-.calendar-icon {
-  color: $body-color;
-
-  // &:hover {
-  //   // change color
-  // }
-}
-
-// my request list
 .print-and-email-group {
   @extend .result-type-group;
 
   a {
     height: 45px;
+  }
+}
+
+
+// "submit request" calendar icon
+.date-field {
+  .calendar-icon {
+    color: $body-color;
+  }
+
+  + span {
+    &:hover, &:focus {
+      background-color: $secondary;
+
+      .calendar-icon {
+        color: $white;
+      }
+    }
   }
 }
