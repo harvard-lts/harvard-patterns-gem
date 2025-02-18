@@ -1486,7 +1486,7 @@ $card-border-color:                 $gray-400 !default;
 // $card-inner-border-radius:          subtract($card-border-radius, $card-border-width) !default;
 // $card-cap-padding-y:                $card-spacer-y * .5 !default;
 // $card-cap-padding-x:                $card-spacer-x !default;
-// $card-cap-bg:                       rgba(var(--#{$prefix}body-color-rgb), .03) !default;
+$card-cap-bg:                       $background-gray !default;
 // $card-cap-color:                    null !default;
 // $card-height:                       null !default;
 // $card-color:                        null !default;
@@ -1570,6 +1570,12 @@ $card-border-color:                 $gray-400 !default;
 // $form-feedback-tooltip-opacity:       $tooltip-opacity !default;
 // $form-feedback-tooltip-border-radius: $tooltip-border-radius !default;
 // scss-docs-end tooltip-feedback-variables
+
+// custom tooltip styles
+.tooltip {
+  font-family: $font-family-sans-serif;
+}
+// end custom tooltip styles
 
 
 // Popovers
