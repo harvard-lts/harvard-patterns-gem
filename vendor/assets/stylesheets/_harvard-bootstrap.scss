@@ -307,7 +307,7 @@ $teal:    #3e6f7d !default;
 
 // scss-docs-start theme-color-variables
 $primary:       $blue !default;
-// $secondary:     $gray-600 !default;
+$secondary:     $gray-600 !default;
 // $success:       $green !default;
 $info:          $teal !default; 
 // $warning:       $yellow !default;
@@ -463,7 +463,7 @@ $body-color:                $gray-700 !default;
 //
 // Style anchor elements.
 
-// $link-color:                              $primary !default;
+$link-color:                              $primary !default;
 $link-decoration:                         none !default;
 // $link-shade-percentage:                   20% !default;
 $link-hover-color:                        $primary !default;
@@ -1173,6 +1173,12 @@ $form-select-indicator-padding:     $form-select-padding-x * 2 !default; // Extr
 // $form-floating-transition:              opacity .1s ease-in-out, transform .1s ease-in-out !default;
 // scss-docs-end form-floating-variables
 
+// custom label styles
+label {
+  font-family: $font-family-sans-serif;
+}
+// end custom label styles
+
 // Form validation
 
 // scss-docs-start form-feedback-variables
@@ -1447,8 +1453,6 @@ $pagination-disabled-border-color:  transparent !default;
 }
 ul.pagination {
 	margin: 0 auto;
-	padding-top: 20px;
-	border-top: 1px solid $gray-400;
 }
 ul.pagination, ul.pagination a {
   font-size: 17px;
