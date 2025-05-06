@@ -36,10 +36,15 @@ a.exclude-facet {
   &[rel="nofollow"] {
     .material-symbols-outlined {
       visibility: hidden;
+    }
+  }
 
-      &:hover, &:focus {
+  &:hover, &:focus {
+    &[rel="nofollow"] {
+      .material-symbols-outlined {
         visibility: visible;
         color: $red;
+        font-size: 20px;
         border: 0;
       }
     }
