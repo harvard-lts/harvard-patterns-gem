@@ -1,0 +1,19 @@
+{
+  "name": "@huit-artifactory/harvard-patterms",
+  "version": "0.1.0",
+  "files": [
+    "vendor/assets"
+  ],
+  "publishConfig": {
+    "registry": "https://artifactory.huit.harvard.edu/artifactory/api/npm/lts-npm/"
+  },
+  "dependencies": {
+    "bootstrap-icons": "^1.11.3",
+    "next": "^15.2.4",
+    "sass": "^1.80.6",
+    "scss": "^0.2.4"
+  },
+  "peerDependencies": {
+    "bootstrap": "^5.3.3"
+  }
+}
