@@ -1,0 +1,16 @@
+{
+  "name": "harvard-patterns",
+  "version": "0.1.1",
+  "files": [
+    "vendor/assets"
+  ],
+  "dependencies": {
+    "bootstrap-icons": "^1.11.3",
+    "bootstrap": "^5.3.3",
+    "sass": "^1.80.6",
+    "scss": "^0.2.4"
+  },
+  "peerDependencies": {
+    "bootstrap": "^5.3.3"
+  }
+}
