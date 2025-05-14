@@ -1,6 +1,6 @@
 {
-  "name": "@huit-artifactory/harvard-patterms",
-  "version": "0.1.0",
+  "name": "@huit-artifactory/harvard-patterns",
+  "version": "0.1.1",
   "files": [
     "vendor/assets"
   ],
@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "bootstrap-icons": "^1.11.3",
+    "bootstrap": "^5.3.3",
     "next": "^15.2.4",
     "sass": "^1.80.6",
     "scss": "^0.2.4"
