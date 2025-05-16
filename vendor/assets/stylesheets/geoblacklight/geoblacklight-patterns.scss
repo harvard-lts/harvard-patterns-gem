@@ -1,3 +1,11 @@
+// BREAKPOINT VARIABLES NOT ALREADY DEFINED
+$bp-x-small-min: 0;
+$bp-x-small-max: 575px;
+$bp-small-min: 576px;
+$bp-small-max: 991px;
+$bp-large-min: 992px;
+$bp-large-max: 1199px;
+
 // PATTERNS SPECIFIC TO HARVARD GEOSPATIAL LIBRARY
 @import 'gbl-homepage';
 @import 'gbl-index-map-explorer';
