@@ -73,14 +73,21 @@
     }
 
     iframe {
-      padding-bottom: 1.25rem;
+      height: 48rem;
     }
   }
 
   // embed thumbnails option
   .show-document {
     .thumbnail-card {
-      width: 12.5rem
+      width: 12.5rem;
+
+      .card-text {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+      }
     }
   }
 
