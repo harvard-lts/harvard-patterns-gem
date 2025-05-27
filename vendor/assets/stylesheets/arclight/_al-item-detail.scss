@@ -248,7 +248,7 @@ button.btn-sm {
       border: 1px solid $border-gray;
       border-radius: 4px 0 0 4px;
       border-right: 0;
-      border-left-color: $red;
+      border-left-color: $yellow;
       border-left-width: 6px;
       padding: 1.25rem;
       margin-bottom: 1rem;
@@ -271,7 +271,7 @@ button.btn-sm {
     dd.blacklight-restrictions,
     dd.blacklight-parent_restrictions {
       padding: 1.25rem 2.25rem .25rem 1.25rem;
-      border-left: 6px solid $red;
+      border-left: 6px solid $yellow;
       border-radius: 4px 4px 0 0;
       margin: 0 1rem;
     }
