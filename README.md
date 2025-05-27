@@ -135,7 +135,7 @@ meld /path/to/target-project/harvard-patterns-gem-0.1.0/vendor/assets/stylesheet
 If happy with preview, sync changes:
 ```zsh
 # From target project
-cp -R harvard-patterns-gem-0.1.0/vendor/assets/stylesheets/* /path/to/harvard-patterns-gem/vendor/assets/stylesheets/
+cp -R /path/to/harvard-patterns-gem-0.1.0/vendor/assets/stylesheets/* /path/to/harvard-patterns-gem/vendor/assets/stylesheets/
 ```
 
 ### 6. Commit Changes and Test New Branch
