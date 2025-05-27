@@ -1,0 +1,75 @@
+// TYPOGRAPHY
+
+// Arclight Variables
+// Overrides Harvard Custom variables to change almost all fonts to "Source Sans 3"
+
+$f-source-sans: "Source Sans 3", sans-serif; // custom variable
+
+// Links
+// custom link styles
+.hl__arclight {
+  header nav a, main a:not(.btn), main .btn-link {
+    font-family: $f-source-sans;
+    color: red !important;
+  }
+}
+// end custom links styles
+
+
+// Typography
+$font-family-sans-serif:      $f-source-sans !default;
+$font-family-base:            $f-source-sans !default;
+$headings-font-family:        $font-family-sans-serif !default;
+
+
+// Tables
+// custom table styles
+table, .table {
+  font-family: $font-family-sans-serif;
+}
+// end custom table styles
+
+
+// Buttons + Forms
+// $input-btn-font-family:       $font-family-sans-serif !default;
+
+
+// Buttons
+// $btn-font-family:             $font-family-sans-serif !default;
+
+// Forms
+// custom input-group styles
+.input-group-text {
+  font-family: $font-family-sans-serif;
+}
+// end custom input-group styles
+
+// custom label styles
+label {
+  font-family: $font-family-sans-serif;
+}
+// end custom label styles
+
+
+// Tooltips
+// custom tooltip styles
+.tooltip {
+  font-family: $font-family-sans-serif;
+}
+// end custom tooltip styles
+
+
+// Badges
+// custom badge styles
+.badge {
+  font-family: $font-family-sans-serif;
+}
+// end custom badge styles
+
+
+// Breadcrumbs
+// custom breadcrumb styles
+.breadcrumb {
+  font-family: $font-family-sans-serif;
+}
+// end custom breadcrumb styles
