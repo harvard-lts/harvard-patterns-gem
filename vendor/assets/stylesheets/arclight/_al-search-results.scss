@@ -20,20 +20,34 @@
       align-items: center;
     }
   }
+
+  // pagination at top of page
+  .page-links {
+    font-size: 1.25rem;
+  }
 }
 
 
 // metadata card views (on search results and :my request list" pages)
 #documents {
+  // search result card
+  article.document {
+    h3, .h3 {
+      &.index_title {
+        font-size: 1.25rem;
+      }
+    }
+
+    dl {
+      margin-bottom: 0;
+    }
+  }
+
   // search result card - list view
   .documents-list article.document,
   &.documents-list article.document {
     padding-top: 1.25rem;
     padding-bottom: .5rem;
-
-    dl {
-      margin-bottom: 0;
-    }
   }
 
   // search result card - compact view
@@ -41,15 +55,16 @@
   &.documents-compact article.document {
     padding-top: 1rem;
     padding-bottom: .5rem;
-
-    dl {
-      margin-bottom: 0;
-    }
   }
       
   .al-document-highlight {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
+
+    // highlight color
+    em {
+      background-color: #FFFCC8;
+    }
   }
 
   // indent and make small gray links look clickable
@@ -70,15 +85,38 @@
     }
   }
 
-  // gray box title when "grouped by collection"
+  // gray box when "grouped by collection"
   .al-grouped-title-bar {
     h3, .h3 {
+      font-size: 22px;
       line-height: 1.5;
+      margin-bottom: 2px;
+    }
+
+    .al-grouped-repository.breadcrumb-links {
+      font-size: 1em;
+      margin-bottom: 0;
+    }
+  }
+
+  .al-document-abstract-or-scope {
+    font-size: 1em;
+
+    button {
+      font-size: 0.85em;
     }
   }
 
   // extent badge
   article.document .document-title-heading .al-document-extent {
     background-color: $background-gray;
+  }
+
+  // secondary links
+  .al-grouped-repository.breadcrumb-links,
+  .al-grouped-more {
+    a {
+      color: $teal;
+    }
   }
 }
