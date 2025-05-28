@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    harvard-patterns-gem (0.8)
+    harvard-patterns-gem (0.9)
       rails
       sass
       sass-rails
