@@ -1,0 +1,11 @@
+// FONTS
+
+// Arclight Variables
+// Overrides Harvard Custom variables to change almost all fonts to "Source Sans 3"
+
+$f-source-sans: "Source Sans 3", sans-serif; // custom variable
+
+// Typography
+$font-family-sans-serif:      $f-source-sans !default;
+$font-family-base:            $f-source-sans !default;
+$headings-font-family:        $font-family-sans-serif !default;

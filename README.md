@@ -55,7 +55,7 @@ Images should be referenced using standard Rails asset helpers:
 
 In ERB Views:
 
-```bash
+```zsh
 <%= image_tag "logo.png" %>
 ```
 
@@ -82,11 +82,75 @@ Note: Images may also need to be declared in your `manifest.js` file:
 ## Local Development
 If you want to modify the gem for local development and test it in another project, follow these steps:
 
-### 1. Make Changes in a New Branch
-Create a new branch and add your changes there. Commit changes.
+### 1. Build Gem Locally in New Branch
+Create a new branch and build the gem locally:
 
-### 2. Link the Gem
-In the target project's `Gemfile`, link the gem to your branch name:
+```zsh
+gem build harvard-patterns-gem.gemspec
+```
+
+### 2. Unpack Gem in Target Project
+Navigate to the target project and unpack the gem:
+
+```zsh
+cd /path/to/target-project
+gem unpack /path/to/harvard-patterns-gem-0.1.0.gem
+```
+
+Note: Numbers at the end should match the gem's version number.
+
+### 3. Import Stylesheets from Local Gem
+In your target project, update the stylesheet file (`app/assets/stylesheets/application.css` or similar) to point to the unpacked stylesheets.
+
+Instead of:
+
+```scss
+@import 'harvard-patterns';
+```
+
+Use a relative path that points to the unpacked stylesheets (adjust path as needed):
+
+```scss
+@import '../harvard-patterns-gem-0.1.0/vendor/assets/stylesheets/harvard-patterns.scss';
+```
+
+### 4. Make SCSS Changes in Target Project (Temporary)
+Edit the unpacked SCSS files directly inside your target project to test styling changes live in the UI.
+
+### 5. Preview and Sync Changes
+Preview changes between the unpacked gem in your target project and original gem:
+
+View line-by-line differences in the terminal (similar to git diff)
+```zsh
+diff -ruN \
+  /path/to/target-project/harvard-patterns-gem-0.1.0/vendor/assets/stylesheets/ \
+  /path/to/harvard-patterns-gem/vendor/assets/stylesheets/
+```
+
+or use a GUI tool to get a side-by-side comparison of all file differences
+```zsh
+meld /path/to/target-project/harvard-patterns-gem-0.1.0/vendor/assets/stylesheets/ /path/to/harvard-patterns-gem/vendor/assets/stylesheets/
+```
+
+If happy with preview, sync changes:
+```zsh
+# From target project
+cp -R /path/to/harvard-patterns-gem-0.1.0/vendor/assets/stylesheets/* /path/to/harvard-patterns-gem/vendor/assets/stylesheets/
+```
+
+### 6. Commit Changes and Test New Branch
+
+#### In `harvard-patterns-gem`
+* Remove the built gemspec (`harvard-patterns-gem-0.1.0.gemspec`).
+* View synced changes to confirm they're what you want.
+* Commit changes into your new branch.
+
+#### In Target Project
+Remove all local references to harvard-patterns-gem-0.1.0:
+* Delete unpacked gem (`harvard-patterns-gem-0.1.0`)
+* Change your stylesheet import back to `@import 'harvard-patterns'`
+
+In the `Gemfile`, link the gem to your branch name:
 ```ruby
 gem "harvard-patterns-gem", git: "https://github.com/harvard-lts/harvard-patterns-gem", branch: "BRANCH-NAME"
 ```
@@ -97,19 +161,7 @@ Check your `Gemfile.lock` to confirm the change has been made. You should see th
 
 Changes will immediately reflect in the project using this version of the gem after a restart or asset recompile.
 
-### 3. Iterate on Changes (optional)
-I recommend the following steps after every new commit you want to test to ensure you are testing the newest changes. 
-
-In the gem:
-* Make and commit additional changes.
-* Update the version of your gem in `version.rb` (can be anything, just different from the previous version). This helps to visually recognize that you are using the most up-to-date code in your branch.
-
-In the target project:
-* Remove your `Gemfile.lock`.
-* Reinstall with `bundle install` and confirm the new `Gemfile.lock` includes the version you just created.
-* Restart the gem to view your changes.
-
-### 4. Revert to Remote Version
+### 7. Revert to Remote Version
 Once you're done with local development and testing, switch back to the remote gem in the Gemfile:
 
 ```ruby
@@ -119,7 +171,6 @@ gem 'harvard-patterns-gem', git: 'https://github.com/harvard-lts/harvard-pattern
 Run `bundle install` to apply the change.
 
 Check your `Gemfile.lock` to confirm the change has been made. You should see a tag number instead of a branch name.
-
 
 ## Creating a New Version and Updating in Projects
 
@@ -133,6 +184,8 @@ module HarvardPatternsGem
   VERSION = '1.1.0' # Update to the new version
 end
 ```
+
+Run `bundle install` to apply the change.
 
 Commit the version bump using your terminal or the GitHub interface:
 ```zsh

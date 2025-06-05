@@ -1,0 +1,13 @@
+// TYPOGRAPHY
+
+// CHANGE LINKS TO SOURCE SANS (except harvard header and footer links)
+header nav a, 
+main a:not(.btn), 
+main .btn-link {
+  font-family: $f-source-sans !important;
+}
+
+// REVERT FOOTER TEXT BACK TO TRUENO
+.hl__footer .hl__footer__content {
+  font-family: $f-trueno;
+}
