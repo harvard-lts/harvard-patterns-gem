@@ -11,10 +11,10 @@
 @import 'variables';
 @import 'breakpoints';
 @import 'colors';
-// @import 'container';
-// @import 'typography';
+@import 'container';
+@import 'typography';
 @import 'global';
-// @import 'links-and-buttons';
+@import 'links-and-buttons';
 @import 'visually-hidden';
 
 // PATTERNS
@@ -27,7 +27,7 @@
 @import 'modal-windows';
 // @import 'other-screens';
 @import 'search-results';
-// @import 'searchbar';
+@import 'searchbar';
 @import 'topbar-nav';
 
 // BOOTSTRAP 5
