@@ -1,0 +1,6 @@
+@function harvard-asset-url($path) {
+  @if function-exists('asset-url') {
+    @return asset-url($path);
+  }
+  @return url($path);
+}
